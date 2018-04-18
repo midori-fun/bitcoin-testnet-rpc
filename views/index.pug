@@ -1,0 +1,52 @@
+html
+	head
+		script(src="https://code.jquery.com/jquery-3.3.1.min.js")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js")
+		script.
+			$(function() {
+				$.getScript("js/index.js");
+			});
+	body
+		.container
+			.row
+				h2 Remote JSON RPC server & curl generater (for testnet)
+				p#introduction
+					| You need to get you username(for field "rpcuser") and password(for field "rpcpassword") to use RPC server.
+					| I'm willing to issue one if you are a blockchain developer.
+					| If you want one, 
+					a(href="mailto:jiyu@midori.fun") contact me. 
+			.row
+				.col-md-12
+					form.col-md-6.form-horizontal(role="form" action="/" method="post")
+						.form-group
+							label.control-label.required(for="method") method
+							input.form-control(type="text" id="method" placeholder="getnetworkinfo" value=method)
+						.form-group
+							label.control-label.required(for="params") params
+							input.form-control(type="text" id="params" placeholder="[]" value=params)
+						.form-group
+							label.control-label.required(for="rpcuser") rpcuser
+							input.form-control(type="text" id="rpcuser" placeholder="midori" value=user)
+						.form-group
+							label.control-label.required(for="rpcpassword") rpcpass
+							input.form-control(type="password" id="rpcpassword" placeholder="rypto" value=pass)
+						.form-group
+							label.control-label.required(for="host") host
+							input.form-control(type="text" id="host" readonly="readonly")
+						.form-group
+							button.col-md-1.btn.btn-default(type="submit") Run
+				.col-md-12.form-group#result
+					h3 Result
+					label.control-label.required(for="api") JSON RPC result
+					input.form-control.float-left(type="text" id="api" readonly="readonly")
+					button.btn.btn-default.copybtn(type="button" data-clipboard-target="#api").
+						Copy to clipboard
+					br
+					br
+					label.control-label.required(for="rpcport") curl command
+					input.form-control.float-left(type="text" id="curl" readonly="readonly")
+					button.btn.btn-default.copybtn(type="button" data-clipboard-target="#curl").
+						Copy to clipboard

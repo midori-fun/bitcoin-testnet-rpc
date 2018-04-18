@@ -1,0 +1,20 @@
+{
+  "name": "rpc",
+  "private": true,
+  "version": "1.0.0",
+  "repository": "git@github.com:midori-fun/bitcoin-testnet-rpc.git",
+  "author": "jiyu <jiyu@midori.fun>",
+  "dependencies": {
+    "bitcoinjs-lib": "^3.3.2",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "greenlock-express": "^2.0.12",
+    "jsdom": "^11.7.0",
+    "json-rpc2": "^1.0.2",
+    "pug": "^2.0.3",
+    "request": "^2.85.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
