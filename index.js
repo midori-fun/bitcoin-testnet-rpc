@@ -1,8 +1,10 @@
 let bodyParser = require("body-parser");
 let express = require("express");
 let request = require("request");
-let port = 55000;
-let port_http = 55002;
+let port = {
+	http: 55000,
+	ssl: 55001
+};
 let path = {
 	users: "users.json",
 	auth: "auth.json"
@@ -89,8 +91,8 @@ require('greenlock-express').create({
   agreeTos: true,
   approveDomains: [ 'midori.fun' ],
   app: app
-}).listen(port+1, port);
+}).listen(port.ssl+1, port.ssl);
 
-app.listen(port_http, () => {
-	console.log(`(http) listen on :${port_http}`);
+app.listen(port.http, () => {
+	console.log(`(http) listen on :${port.http}`);
 });

@@ -6,9 +6,9 @@ $(".copybtn").on("click", function() {
 $("#host").val(location.host);
 
 if(location.protocol.includes("https")) {
-	$("#introduction").append(`If you want to use http, go to <a href="http://${location.hostname}:55002">http version</a>.`);
+	$("#introduction").append(`If you want to use http, go to <a href="http://${location.hostname}:55000">http version</a>.`);
 } else {
-	$("#introduction").append(`If you want to use https, go to <a href="https://${location.hostname}:55000">https version</a>.`);
+	$("#introduction").append(`If you want to use https, go to <a href="https://${location.hostname}:55001">https version</a>.`);
 }
 
 $("form input").each(function(i, e) {
