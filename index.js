@@ -1,3 +1,4 @@
+process.title = "rpc_test";
 let bodyParser = require("body-parser");
 let express = require("express");
 let request = require("request");

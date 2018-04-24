@@ -16,5 +16,6 @@
   },
   "scripts": {
     "start": "node index.js"
+		"stop": "pkill --signal SIGINT rpc_test"
   }
 }
